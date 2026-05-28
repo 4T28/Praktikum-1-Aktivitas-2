@@ -98,54 +98,6 @@ class HomePage extends StatelessWidget {
           'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-villa-santorini-modern-2-lantai-78050526-6377139050526101843-6.webp',
           'description': 'Private Villa dengan Private Pool',
         },
-        {
-          'title': 'Deluxe Room',
-          'price': 80,
-          'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-villa-modern-2-lantai-57300525-4266975171225025657-1.webp',
-          'description': 'Deluxe dengan 1 Kamar Tidur - City View',
-        },
-        {
-          'title': 'Family Room',
-          'price': 120,
-          'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-villa-modern-1-lantai-58050525-7176234101225114621.webp',
-          'description': 'Family Room dengan 2 Kamar Tidur - Garden View',
-        },
-        {
-          'title': 'Presidential Suite',
-          'price': 200,
-          'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-villa-modern-3-lantai-59040425-26383121040425083510-1.webp',
-          'description': 'Presidential Suite dengan 3 Kamar Tidur - Ocean View',
-        },
-        {
-          'title': 'Honeymoon Suite',
-          'price': 180,
-          'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-villa-modern-3-lantai-1140325-44679152140325085838-2.webp',
-          'description': 'Honeymoon Suite dengan Private Jacuzzi - Beach View',
-        },
-        {
-          'title': 'Standard Room',
-          'price': 60,
-          'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-villa-modern-3-lantai-59040425-486373575040425083403-8.webp',
-          'description': 'Standard Room dengan 1 Kamar Tidur - City View',
-        },
-        {
-          'title': 'Executive Suite',
-          'price': 130,
-          'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-villa-style-villa-bali-modern-2-lantai-51220225-4262479220225083458-6.webp',
-          'description': 'Executive Suite dengan 2 Kamar Tidur - Garden View',
-        },
-        {
-          'title': 'Royal Suite',
-          'price': 250,
-          'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-rumah-modern-3-lantai-28261024-356142877110125093649-5.webp',
-          'description': 'Royal Suite dengan 4 Kamar Tidur - Ocean View',
-        },
-        {
-          'title': 'Minimalist Room',
-          'price': 70,
-          'image': 'https://i0.wp.com/www.emporioarchitect.com/upload/portofolio/thumb/desain-rumah-modern-3-lantai-28261024-993712441110125093602-7.webp',
-          'description': 'Garden Room dengan 1 Kamar Tidur - Garden View',
-        },
       ];
 
   @override
