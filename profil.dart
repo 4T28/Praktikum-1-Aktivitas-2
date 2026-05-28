@@ -24,8 +24,8 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  final String nim = '1462300000';
-  final String nama = 'Mafuyu Aikawa';
+  final String nim = '1462300094';
+  final String nama = 'Muhammad Edhu Maulana';
   Uint8List? _imageBytes;
 
   Future<void> _pickImage() async {
