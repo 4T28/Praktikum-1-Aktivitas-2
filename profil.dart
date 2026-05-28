@@ -24,6 +24,8 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  final String nim = '1462300000';
+  final String nama = 'Mafuyu Aikawa';
   Uint8List? _imageBytes;
 
   Future<void> _pickImage() async {
@@ -37,127 +39,52 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  height: 220,
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFFDDE4F2),
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(120),
-                      bottomRight: Radius.circular(120),
-                    ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Welcome to', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              const Text('PRAKTIKUM PAB 2026', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              Text('$nama ($nim)', style: const TextStyle(fontSize: 16, color: Colors.grey)),
+              const SizedBox(height: 24),
+              GestureDetector(
+                onTap: _pickImage,
+                child: Container(
+                  width: 180,
+                  height: 280,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(16),
                   ),
-                ),
-
-                const Positioned(
-                  top: 55,
-                  child: Text(
-                    'Profile',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black54,
-                    ),
-                  ),
-                ),
-
-                Positioned(
-                  bottom: 10,
-                  child: GestureDetector(
-                    onTap: _pickImage,
-                    child: Container(
-                      width: 95,
-                      height: 95,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 6,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: _imageBytes != null
-                          ? ClipOval(
-                              child: Image.memory(
-                                _imageBytes!,
-                                fit: BoxFit.cover,
-                              ),
-                            )
-                          : const Icon(
-                              Icons.person_outline,
-                              size: 50,
-                              color: Colors.blueAccent,
-                            ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 30),
-
-            buildProfileItem(Icons.person_outline, 'Muhammad Edhu Maulana'),
-            buildProfileItem(Icons.phone_outlined, '1462300094'),
-            buildProfileItem(Icons.email_outlined, 'pab2026@gmail.com'),
-            buildProfileItem(Icons.location_on_outlined, 'Konstantinopel'),
-            buildProfileItem(Icons.camera_alt_outlined, 'pab2026'),
-
-            const SizedBox(height: 40),
-
-            Container(
-              height: 180,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Color(0xFFDDE4F2),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(140),
-                  topRight: Radius.circular(140),
+                  child: _imageBytes != null
+                      ? ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: Image.memory(_imageBytes!, fit: BoxFit.cover),
+                        )
+                      : const Icon(Icons.add_a_photo, size: 40, color: Colors.grey),
                 ),
               ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget buildProfileItem(IconData icon, String text) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 10),
-      padding: const EdgeInsets.symmetric(vertical: 14),
-      decoration: const BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: Colors.black12),
-        ),
-      ),
-      child: Row(
-        children: [
-          const SizedBox(width: 10),
-          Icon(
-            icon,
-            color: Colors.lightBlueAccent,
-            size: 28,
+              if (_imageBytes != null)
+                TextButton(
+                  onPressed: () => setState(() => _imageBytes = null),
+                  child: const Text('Hapus Foto', style: TextStyle(color: Colors.red)),
+                ),
+              const SizedBox(height: 32),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  minimumSize: const Size(200, 45),
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                ),
+                child: const Text('Login'),
+              ),
+            ],
           ),
-          const SizedBox(width: 18),
-          Text(
-            text,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.black54,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
